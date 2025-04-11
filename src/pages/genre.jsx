@@ -28,7 +28,7 @@ const Genre = () => {
 
     const handleNextPage = () => {
         if (selected.length < 3) return;
-        navigate("/nextpage");  
+        navigate("/widgets", { state: { selected } });  
     };
 
     return (
