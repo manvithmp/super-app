@@ -3,15 +3,15 @@ import styles from "../styles/genre.module.css";
 import { useNavigate } from "react-router-dom";
 
 const CARDS = [
-    { id: 1, title: "Action", image: "./public/action.png",bg: "#FF5209" },
-    { id: 2, title: "Drama", image: "./public/drama.png", bg: "#D7A4FF" },
-    { id: 3, title: "Romance", image: "./public/romance.png", bg: "#148A08" },
-    { id: 4, title: "Thriller", image: "./public/thriller.png", bg: "#84C2FF" },
-    { id: 5, title: "Western", image: "./public/western.png", bg: "#902500" },
-    { id: 6, title: "Horror", image: "./public/horror.png", bg: "#7358FF" },
-    { id: 7, title: "Fantasy", image: "./public/fantasy.png", bg: "#FF4ADE" },
-    { id: 8, title: "Music", image: "./public/music.png", bg: "#E61E32" },
-    { id: 9, title: "Fiction", image: "./public/fiction.png", bg: "#6CD061" }
+    { id: 1, title: "Action", image: "./action.png",bg: "#FF5209" },
+    { id: 2, title: "Drama", image: "./drama.png", bg: "#D7A4FF" },
+    { id: 3, title: "Romance", image: "./romance.png", bg: "#148A08" },
+    { id: 4, title: "Thriller", image: "./thriller.png", bg: "#84C2FF" },
+    { id: 5, title: "Western", image: "./western.png", bg: "#902500" },
+    { id: 6, title: "Horror", image: "./horror.png", bg: "#7358FF" },
+    { id: 7, title: "Fantasy", image: "./fantasy.png", bg: "#FF4ADE" },
+    { id: 8, title: "Music", image: "./music.png", bg: "#E61E32" },
+    { id: 9, title: "Fiction", image: "./fiction.png", bg: "#6CD061" }
 ];
 
 const Genre = () => {
