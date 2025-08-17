@@ -1,17 +1,601 @@
-.widgets {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem;
+.container {
+  min-height: 100vh;
+  background: #000000;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.profileCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profileImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.profileInfo h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.profileInfo p {
+  margin: 0 0 4px 0;
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+.genreTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 40px;
+  align-items: flex-start;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.noGenres {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.notesCard {
+  background: #ffd54f;
+  border-radius: 20px;
+  padding: 25px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.notesCard h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.4em;
+  color: #333;
+  font-weight: 600;
+}
+
+.notesContent {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  flex: 1;
+  min-height: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb transparent;
+}
+
+.notesContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notesContent::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.notesContent::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.notesContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.notesContent:empty:before {
+  content: attr(placeholder);
+  color: #999;
+  font-style: italic;
+}
+
+.weatherCard {
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dateTime {
+  background: #e91e63;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.weatherMain {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.weatherIcon {
+  font-size: 3em;
+}
+
+.temperature {
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+.weatherCondition {
+  margin-bottom: 20px;
+  opacity: 0.9;
+  font-size: 1.1em;
+}
+
+.weatherDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.weatherDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.weatherValue {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.weatherSymbol {
+  font-size: 1.2em;
+}
+
+.weatherLabel {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.newsCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsImageSection {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.newsImageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newsOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 20px;
+  color: white;
+}
+
+.newsOverlay h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.newsContentSection {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newsContentSection p {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.browseButtonFixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1em;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.browseButtonFixed:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.browseButton {
+  display: none;
+}
+
+
+.timerCard {
+  background: #1a1a2e;
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timerDisplay {
+  flex: 1;
+}
+
+.timerCircle {
+  width: 140px;
+  height: 140px;
+  border: 5px solid #ff4757;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timerTime {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
+
+.timerControls {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.timeInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeLabel {
+  font-size: 1em;
+  opacity: 0.8;
+  color: #ccc;
+}
+
+.inputControl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.inputControl button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.inputControl button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.timeValue {
+  font-size: 1.8em;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+  color: white;
+}
+
+.separator {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  margin: 0 10px;
+}
+
+.startButton {
+  background: #ff4757;
+  border: none;
+  color: white;
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.startButton:hover {
+  background: #ff3742;
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    height: auto;
   }
   
-  .focus {
-    grid-row: "1";
-    height: "60vh";
-    border-radius: "2rem";
-    padding: "2rem";
-    background-color: aliceblue;
+  .timerCard {
+    grid-column: span 1;
+    flex-direction: column;
+    gap: 20px;
   }
-  .focus:focus {
-    background-color: rebeccapurple;
+  
+  .timeInputs {
+    gap: 15px;
   }
+  
+  .separator {
+    display: none;
+  }
+  
+  .notesContent {
+    max-height: 150px;
+  }
+}
+
+.newsCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.newsImageSection {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.newsImageSection:hover {
+  transform: scale(1.02);
+}
+
+.newsImageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.newsOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 20px;
+  color: white;
+}
+
+.newsOverlay h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.newsContentSection {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newsContentSection p {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.newsContentSection p:hover {
+  color: #444;
+}
+
+.newsActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.newsIndex {
+  font-size: 0.85em;
+  color: #999;
+  font-weight: 500;
+}
+
+.nextNewsButton {
+  background: #4caf50;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.nextNewsButton:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.nextNewsButton:active {
+  transform: translateX(1px);
+}
+
+.nextNewsButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.browseButtonFixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1em;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.browseButtonFixed:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+@media (max-width: 768px) {
+  .newsActions {
+    margin-top: 15px;
+  }
+  
+  .nextNewsButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1em;
+  }
+  
+  .newsOverlay h3 {
+    font-size: 1.1em;
+  }
+  
+  .newsContentSection p {
+    -webkit-line-clamp: 2;
+  }
+}
+.newsError {
+  background: rgba(255, 152, 0, 0.1);
+  border-left: 3px solid #ff9800;
+  padding: 8px 15px;
+  margin: 10px 20px 0;
+  font-size: 0.85em;
+  color: #ff9800;
+}

@@ -1,5 +1,5 @@
 export async function getNews() {
-    const res = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2025-01-14&sortBy=publishedAt&apiKey=55516c51eb12421faae0d81b2d55a808")
+    const res = await fetch('https://gnews.io/api/v4/top-headlines?country=in&lang=en&max=10&token=d564f39d6c1916192ff167fdd722d823')
     const data = await res.json()
     return data
 }
